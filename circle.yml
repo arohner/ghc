@@ -1,7 +1,7 @@
 dependencies:
   override:
-    ./sync-all -r git://github.com/ghc --testsuite get
-    perl boot
+    - ./sync-all -r git://github.com/ghc --testsuite get
+    - perl boot
 
 test:
   override:
