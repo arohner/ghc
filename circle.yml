@@ -1,0 +1,10 @@
+dependencies:
+  override:
+    ./sync-all -r git://github.com/ghc --testsuite get
+    perl boot
+
+test:
+  override:
+    - ./configure
+    - make -s stage=1 -j2 --debug=b
+    - make test stage=1 -j2 BINDIST=NO THREADS=2
