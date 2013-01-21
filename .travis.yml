@@ -1,0 +1,28 @@
+language: haskell
+before_install:
+    - sudo apt-get install perl
+    # do i need this cabal line?
+    # - cabal install haddock 
+    - ./sync-all -r git://github.com/ghc --testsuite get
+    - perl boot
+   
+
+
+
+install:
+   # - set V=0
+   - ./configure 
+   - make -s -debug=b fast 
+   # - make -s fast  stage=1
+
+ 
+ #   - make stage=1
+script: 
+   # - set V=0
+   # - sh terse-validate
+   - make test 
+   # - sh validate
+  #  - make test
+
+# notifications:
+#     - email: true
