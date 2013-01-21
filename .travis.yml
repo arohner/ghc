@@ -12,7 +12,7 @@ before_install:
 install:
    # - set V=0
    - ./configure 
-   - make -s --debug=b stage=1 -j2
+   - make -s stage=1 -j2
    # - make -s fast  stage=1
 
  
