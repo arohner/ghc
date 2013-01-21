@@ -12,7 +12,7 @@ before_install:
 install:
    # - set V=0
    - ./configure 
-   - make -s --debug=b 
+   - make -s --debug=b stage=1 -j2
    # - make -s fast  stage=1
 
  
@@ -20,7 +20,7 @@ install:
 script: 
    # - set V=0
    # - sh terse-validate
-   - make test 
+   - make test stage=1 -j2 BINDIST=NO THREADS=2
    # - sh validate
   #  - make test
 
